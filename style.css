@@ -1,0 +1,1317 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --valorant-red: #FF4655;
+    --valorant-black: #0F1419;
+    --valorant-gray: #1E2328;
+    --valorant-teal: #00D4AA;
+    --valorant-gold: #FFCC00;
+    --text-white: #FFFFFF;
+    --text-gray: #8A8A8A;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background: linear-gradient(135deg, var(--valorant-black) 0%, var(--valorant-gray) 50%, #2A1515 100%);
+    color: var(--text-white);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Animated Background Particles */
+.particles {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 3s ease-in-out infinite;
+}
+
+.particle-1 {
+    top: 10%;
+    left: 10%;
+    width: 8px;
+    height: 8px;
+    background: var(--valorant-teal);
+}
+
+.particle-2 {
+    top: 20%;
+    right: 20%;
+    width: 4px;
+    height: 4px;
+    background: var(--valorant-red);
+    animation-delay: 1s;
+}
+
+.particle-3 {
+    bottom: 20%;
+    left: 25%;
+    width: 6px;
+    height: 6px;
+    background: var(--valorant-gold);
+    animation-delay: 2s;
+}
+
+.particle-4 {
+    top: 50%;
+    right: 10%;
+    width: 4px;
+    height: 4px;
+    background: var(--valorant-teal);
+    animation-delay: 0.5s;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 20, 25, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 70, 85, 0.3);
+    z-index: 50;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--valorant-red);
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--valorant-teal);
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.play-btn {
+    background: var(--valorant-red);
+    color: var(--text-white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid var(--valorant-red);
+    box-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background: #BD3944;
+    transform: scale(1.05);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255, 70, 85, 0.3);
+}
+
+.mobile-nav-link {
+    background: none;
+    border: none;
+    color: var(--text-white);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    text-align: left;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+    color: var(--valorant-teal);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+}
+
+.hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(15, 20, 25, 0.5), rgba(15, 20, 25, 0.8));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+    animation: slideUp 0.8s ease-out;
+}
+
+.hero-title {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--valorant-red);
+    color: var(--text-white);
+    animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+.btn-primary:hover {
+    background: #BD3944;
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.tactical-grid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 98px,
+        var(--valorant-teal) 100px
+    );
+}
+
+/* Common Styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: slideUp 0.8s ease-out;
+}
+
+.section-header h2 {
+    font-family: 'Orbitron', monospace;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-red { color: var(--valorant-red); }
+.text-teal { color: var(--valorant-teal); }
+.text-gold { color: var(--valorant-gold); }
+
+.neon-border {
+    border: 2px solid var(--valorant-red);
+    box-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
+}
+
+/* Agents Section */
+.agents-section {
+    padding: 5rem 0;
+    background: rgba(30, 35, 40, 0.5);
+}
+
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.agent-card {
+    background: rgba(15, 20, 25, 0.8);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid var(--valorant-red);
+    box-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
+    position: relative;
+}
+
+.agent-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--valorant-teal), transparent);
+    animation: scan 3s linear infinite;
+}
+
+.agent-card:hover {
+    transform: scale(1.05) rotateY(5deg);
+}
+
+.agent-image {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.agent-card:hover .agent-image {
+    transform: scale(1.1);
+}
+
+.agent-info {
+    padding: 1.5rem;
+}
+
+.agent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.agent-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.agent-role {
+    font-family: 'Orbitron', monospace;
+    font-size: 0.9rem;
+    color: var(--valorant-teal);
+}
+
+.agent-description {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.agent-stats {
+    margin-bottom: 1rem;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.stat-name {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.stat-value {
+    color: var(--valorant-red);
+    font-weight: 700;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 0.5rem;
+    background: var(--valorant-gray);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--valorant-red);
+    border-radius: 0.25rem;
+    transition: width 1s ease;
+}
+
+.select-agent-btn {
+    width: 100%;
+    background: rgba(255, 70, 85, 0.2);
+    color: var(--text-white);
+    border: none;
+    padding: 0.75rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.select-agent-btn:hover {
+    background: var(--valorant-red);
+}
+
+/* Weapons Section */
+.weapons-section {
+    padding: 5rem 0;
+    background: rgba(15, 20, 25, 0.9);
+}
+
+.weapons-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.featured-weapon {
+    background: linear-gradient(135deg, var(--valorant-gray), var(--valorant-black));
+    border-radius: 0.75rem;
+    padding: 2rem;
+    border: 2px solid var(--valorant-red);
+    box-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
+}
+
+.weapon-image {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.weapon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.weapon-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.weapon-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--valorant-gold);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.weapon-description {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+}
+
+.weapon-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-item .stat-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.equip-weapon-btn {
+    width: 100%;
+    background: var(--valorant-red);
+    color: var(--text-white);
+    border: none;
+    padding: 0.75rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.equip-weapon-btn:hover {
+    background: #BD3944;
+    transform: scale(1.02);
+}
+
+.weapons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.weapon-item {
+    background: rgba(30, 35, 40, 0.5);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 70, 85, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.weapon-item:hover {
+    border-color: var(--valorant-red);
+    transform: scale(1.02);
+}
+
+.weapon-item-image {
+    width: 4rem;
+    height: 2.5rem;
+    object-fit: cover;
+    border-radius: 0.25rem;
+}
+
+.weapon-item-info {
+    flex: 1;
+}
+
+.weapon-item-name {
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.25rem;
+}
+
+.weapon-item-type {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.weapon-item-price {
+    color: var(--valorant-gold);
+    font-weight: 700;
+}
+
+/* Maps Section */
+.maps-section {
+    padding: 5rem 0;
+    background: rgba(30, 35, 40, 0.3);
+}
+
+.maps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.map-card {
+    background: rgba(15, 20, 25, 0.8);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid var(--valorant-red);
+    box-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
+}
+
+.map-card:hover {
+    transform: scale(1.05) rotateX(5deg);
+}
+
+.map-image-container {
+    position: relative;
+}
+
+.map-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.map-card:hover .map-image {
+    transform: scale(1.1);
+}
+
+.map-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--valorant-black), transparent);
+    opacity: 0.6;
+}
+
+.map-info-overlay {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+}
+
+.map-name {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.map-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.map-features {
+    color: var(--valorant-teal);
+    font-size: 0.9rem;
+}
+
+.map-rating {
+    color: var(--valorant-gold);
+    font-size: 0.9rem;
+}
+
+.map-content {
+    padding: 1.5rem;
+}
+
+.map-description {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.map-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.map-btn {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.view-map-btn {
+    background: rgba(255, 70, 85, 0.2);
+    color: var(--text-white);
+}
+
+.view-map-btn:hover {
+    background: var(--valorant-red);
+}
+
+.callouts-btn {
+    background: rgba(0, 212, 170, 0.2);
+    color: var(--text-white);
+}
+
+.callouts-btn:hover {
+    background: var(--valorant-teal);
+}
+
+/* Matches Section */
+.matches-section {
+    padding: 5rem 0;
+    background: rgba(15, 20, 25, 0.95);
+}
+
+.featured-match {
+    background: linear-gradient(to right, var(--valorant-gray), var(--valorant-black));
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid var(--valorant-red);
+    box-shadow: 0 0 20px rgba(255, 70, 85, 0.5);
+}
+
+.match-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.live-dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    background: var(--valorant-red);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.live-text {
+    color: var(--valorant-red);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.tournament-name {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.viewer-count {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-white);
+}
+
+.teams-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.team {
+    text-align: center;
+}
+
+.team-logo {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-white);
+    transition: transform 0.3s ease;
+}
+
+.team-logo:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.team-logo.team1 {
+    background: var(--valorant-red);
+}
+
+.team-logo.team2 {
+    background: var(--valorant-teal);
+}
+
+.team-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.team-score {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.team1 .team-score {
+    color: var(--valorant-red);
+}
+
+.team2 .team-score {
+    color: var(--valorant-teal);
+}
+
+.match-info {
+    text-align: center;
+}
+
+.match-map {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.vs-text {
+    font-family: 'Orbitron', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.match-status {
+    color: var(--valorant-teal);
+    font-size: 0.9rem;
+}
+
+.match-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.watch-live-btn {
+    background: var(--valorant-red);
+    color: var(--text-white);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.watch-live-btn:hover {
+    background: #BD3944;
+    transform: scale(1.05);
+}
+
+.match-stats-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 2rem;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.match-stats-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.upcoming-matches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.upcoming-match {
+    background: rgba(30, 35, 40, 0.5);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 70, 85, 0.3);
+    transition: all 0.3s ease;
+}
+
+.upcoming-match:hover {
+    transform: scale(1.02);
+}
+
+.upcoming-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.upcoming-label {
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.time-until {
+    color: var(--valorant-teal);
+    font-size: 0.9rem;
+}
+
+.upcoming-teams {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.upcoming-team {
+    text-align: center;
+}
+
+.upcoming-team-logo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', monospace;
+    font-weight: 700;
+    color: var(--text-white);
+}
+
+.upcoming-team-name {
+    font-size: 0.9rem;
+    color: var(--text-white);
+}
+
+.upcoming-vs {
+    text-align: center;
+}
+
+.upcoming-vs-text {
+    color: var(--text-white);
+    font-weight: 700;
+}
+
+.upcoming-map {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 5rem 0;
+    background: rgba(30, 35, 40, 0.2);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: rgba(15, 20, 25, 0.8);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--valorant-teal), transparent);
+    animation: scan 3s linear infinite;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+.stat-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+}
+
+.stat-change {
+    font-size: 0.9rem;
+}
+
+/* News Section */
+.news-section {
+    padding: 5rem 0;
+    background: rgba(15, 20, 25, 0.9);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.news-article {
+    background: rgba(30, 35, 40, 0.5);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 70, 85, 0.3);
+}
+
+.news-article:hover {
+    transform: scale(1.05) rotateY(5deg);
+}
+
+.news-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.news-category {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 0.25rem;
+}
+
+.news-category.update {
+    background: var(--valorant-red);
+    color: var(--text-white);
+}
+
+.news-category.esports {
+    background: var(--valorant-teal);
+    color: var(--text-white);
+}
+
+.news-category.interview {
+    background: var(--valorant-gold);
+    color: var(--valorant-black);
+}
+
+.news-time {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.news-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 0.75rem;
+}
+
+.news-excerpt {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--valorant-teal);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    color: var(--text-white);
+}
+
+/* Footer */
+.footer {
+    background: var(--valorant-black);
+    border-top: 1px solid rgba(255, 70, 85, 0.3);
+    padding: 4rem 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-column h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--valorant-red);
+    margin-bottom: 1rem;
+}
+
+.footer-column p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--valorant-teal);
+    transform: scale(1.2);
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--valorant-teal);
+    transform: translateX(5px);
+    display: inline-block;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 70, 85, 0.3);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--valorant-teal);
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 5px var(--valorant-red), 0 0 10px var(--valorant-red), 0 0 15px var(--valorant-red); }
+    100% { box-shadow: 0 0 10px var(--valorant-red), 0 0 20px var(--valorant-red), 0 0 30px var(--valorant-red); }
+}
+
+@keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100vw); }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+    }
+    
+    .mobile-menu.active {
+        display: flex;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .weapons-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .teams-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .match-actions {
+        flex-direction: column;
+    }
+    
+    .upcoming-matches {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

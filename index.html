@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALORANT🎮 - Tactical Gaming Hub</title>
+    <meta name="description" content="Experience the ultimate tactical shooter. Master precision shooting, strategic gameplay, and competitive esports in VALORANT's immersive gaming world.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./OG logo.png" type="image/x-icon">
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="VALORANT - Tactical Gaming Hub">
+    <meta property="og:description" content="Experience the ultimate tactical shooter with precision gameplay and competitive esports.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=630">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particles">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo" onclick="scrollToSection('hero')"><i class="fa-solid fa-gamepad"></i>VALORANT</div>
+                <div class="nav-links">
+                    <button onclick="scrollToSection('agents')" class="nav-link">AGENTS</button>
+                    <button onclick="scrollToSection('weapons')" class="nav-link">ARSENAL</button>
+                    <button onclick="scrollToSection('maps')" class="nav-link">MAPS</button>
+                    <button onclick="scrollToSection('matches')" class="nav-link">MATCHES</button>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="play-btn">PLAY NOW</button>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <button onclick="scrollToSection('agents')" class="mobile-nav-link">AGENTS</button>
+            <button onclick="scrollToSection('weapons')" class="mobile-nav-link">ARSENAL</button>
+            <button onclick="scrollToSection('maps')" class="mobile-nav-link">MAPS</button>
+            <button onclick="scrollToSection('matches')" class="mobile-nav-link">MATCHES</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="text-red">TACTICAL</span><br>
+                SUPERIORITY
+            </h1>
+            <p class="hero-subtitle">
+                Master the art of precision. Dominate with strategy. Experience the ultimate tactical shooter.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary">
+                    <i class="fas fa-play"></i>ENTER GAME
+                </button>
+                <button class="btn-secondary">
+                    <i class="fas fa-info-circle"></i>LEARN MORE
+                </button>
+            </div>
+        </div>
+        <div class="tactical-grid"></div>
+    </section>
+
+    <!-- Agents Showcase -->
+    <section id="agents" class="agents-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="text-red">CHOOSE</span> YOUR AGENT</h2>
+                <p>Each agent brings unique abilities to the battlefield. Master their skills and forge your path to victory.</p>
+            </div>
+            <div class="agents-grid" id="agents-grid">
+                <!-- Agents will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Weapons Gallery -->
+    <section id="weapons" class="weapons-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="text-red">TACTICAL</span> ARSENAL</h2>
+                <p>Precision crafted weapons for every combat scenario. Choose your loadout wisely.</p>
+            </div>
+            <div class="weapons-layout">
+                <div class="featured-weapon" id="featured-weapon">
+                    <!-- Featured weapon will be populated by JavaScript -->
+                </div>
+                <div class="weapons-list" id="weapons-list">
+                    <!-- Weapons list will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Maps Viewer -->
+    <section id="maps" class="maps-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="text-red">BATTLEFIELD</span> MAPS</h2>
+                <p>Master every angle, control every chokepoint. Knowledge of the battlefield is your greatest weapon.</p>
+            </div>
+            <div class="maps-grid" id="maps-grid">
+                <!-- Maps will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Matches -->
+    <section id="matches" class="matches-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><span class="text-red">LIVE</span> MATCHES</h2>
+                <p>Watch the best teams compete in real-time. Learn from the pros and witness tactical mastery.</p>
+            </div>
+            <div class="featured-match" id="featured-match">
+                <!-- Featured match will be populated by JavaScript -->
+            </div>
+            <div class="upcoming-matches" id="upcoming-matches">
+                <!-- Upcoming matches will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Display -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>YOUR <span class="text-red">PERFORMANCE</span></h2>
+                <p>Track your progress, analyze your gameplay, and climb the competitive ladder.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card neon-border">
+                    <div class="stat-value text-red">IMMORTAL</div>
+                    <div class="stat-label">Current Rank</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="stat-card neon-border">
+                    <div class="stat-value text-teal">127</div>
+                    <div class="stat-label">Wins This Act</div>
+                    <div class="stat-change text-teal">+15% from last act</div>
+                </div>
+                <div class="stat-card neon-border">
+                    <div class="stat-value text-gold">1.34</div>
+                    <div class="stat-label">K/D Ratio</div>
+                    <div class="stat-change text-gold">Above average</div>
+                </div>
+                <div class="stat-card neon-border">
+                    <div class="stat-value">28%</div>
+                    <div class="stat-label">Headshot %</div>
+                    <div class="stat-change text-red">+3% this week</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>LATEST <span class="text-red">INTEL</span></h2>
+                <p>Stay ahead with the latest updates, patch notes, and competitive insights.</p>
+            </div>
+            <div class="news-grid" id="news-grid">
+                <!-- News articles will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">VALORANT</div>
+                    <p>The tactical shooter that demands precise aim and strategic thinking.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitch"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>GAME</h4>
+                    <ul>
+                        <li><a href="#">Download</a></li>
+                        <li><a href="#">System Requirements</a></li>
+                        <li><a href="#">Release Notes</a></li>
+                        <li><a href="#">Server Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>ESPORTS</h4>
+                    <ul>
+                        <li><a href="#">VCT</a></li>
+                        <li><a href="#">Game Changers</a></li>
+                        <li><a href="#">Teams</a></li>
+                        <li><a href="#">Schedule</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>SUPPORT</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Report Bug</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">© 2024 Riot Games, Inc. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
