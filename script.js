@@ -22,9 +22,9 @@ const agentsData = [
         id: "sage",
         name: "SAGE",
         role: "SENTINEL",
-        description: "Chinese monk, Sage equips her team with various healing abilities.",
+        description: "American Warrior, Sage primary equipment are double-edged sword with Bloodrage abilities.",
         image: "https://wallpapercave.com/wp/wp6515998.png",
-        statName: "Support",
+        statName: "Killer",
         statValue: 99.9
     },
     {
